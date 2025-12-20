@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Good Guys Barbería</title>
+<title>Good Guys Barbería | Barbería Premium</title>
+
+<meta name="description" content="Good Guys Barbería. Cortes premium, fades modernos y barba profesional. Reserva fácil y rápida.">
 
 <style>
 body{
     margin:0;
-    font-family:Montserrat,sans-serif;
+    font-family:Montserrat,Arial,sans-serif;
     background:#000;
     color:#fff;
 }
@@ -22,7 +24,7 @@ nav{
     display:flex;
     justify-content:center;
     gap:40px;
-    padding:15px 0;
+    padding:14px 0;
     z-index:2000;
     border-bottom:1px solid #c7a462;
 }
@@ -30,6 +32,7 @@ nav a{
     color:#c7a462;
     text-decoration:none;
     font-weight:bold;
+    letter-spacing:1px;
 }
 nav a:hover{color:#fff}
 
@@ -48,57 +51,84 @@ header::after{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.55);
+    background:rgba(0,0,0,.6);
 }
 header .content{
     position:relative;
     z-index:2;
+    max-width:700px;
 }
 
-/* ===== LOGO ===== */
+/* LOGO */
 .logo{
     position:absolute;
     top:80px;
     left:50%;
     transform:translateX(-50%);
-    width:150px;
+    width:140px;
     z-index:3;
 }
 
-/* ===== TEXTOS ===== */
-h1{color:#c7a462;font-size:3rem}
-h2{text-align:center;color:#c7a462;margin-bottom:25px}
+/* TEXTOS */
+h1{
+    color:#c7a462;
+    font-size:3rem;
+    margin-bottom:10px;
+}
+h2{
+    text-align:center;
+    color:#c7a462;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+p{font-size:1.1rem}
 
-/* ===== BOTON ===== */
+/* BOTON */
 .btn{
     background:#c7a462;
     color:#000;
-    padding:14px 26px;
+    padding:14px 30px;
     border-radius:6px;
     text-decoration:none;
     font-weight:bold;
     display:inline-block;
-    margin-top:15px;
+    margin-top:20px;
 }
+.btn:hover{background:#e0be7a}
 
-/* ===== SECCIONES ===== */
+/* SECCIONES */
 section{
     padding:60px 20px;
     max-width:1100px;
     margin:auto;
 }
 
-.services,.barbers,.gallery{
+/* SERVICIOS */
+.services{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:25px;
 }
+.service{
+    background:#111;
+    padding:30px 20px;
+    border:1px solid #c7a462;
+    border-radius:10px;
+    text-align:center;
+}
+.service h3{margin-bottom:10px}
 
+/* BARBEROS */
+.barbers{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
 .card{
     background:#111;
     padding:25px;
     border:1px solid #c7a462;
-    border-radius:10px;
+    border-radius:12px;
     text-align:center;
 }
 .card img{
@@ -107,30 +137,25 @@ section{
     margin-bottom:15px;
 }
 
-/* ===== OPINIONES ===== */
-.fresha-badge{
-    text-align:center;
-    color:#c7a462;
-    font-weight:bold;
-    margin-bottom:25px;
-}
+/* OPINIONES */
 .review{
     background:#111;
     padding:20px;
     border-left:4px solid #c7a462;
     border-radius:8px;
     margin-bottom:15px;
+    font-size:.95rem;
 }
 
-/* ===== MAPA ===== */
+/* MAPA */
 iframe{
     width:100%;
-    height:350px;
+    height:320px;
     border-radius:12px;
     border:none;
 }
 
-/* ===== WHATSAPP ===== */
+/* WHATSAPP */
 .whatsapp{
     position:fixed;
     bottom:25px;
@@ -159,29 +184,41 @@ iframe{
     <a href="GoodGuys1.htm">Barberos</a>
 </nav>
 
-<img class="logo" src="https://www.shutterstock.com/image-vector/barbershop-logo-barber-pole-razor-600w-2535695609.jpg">
+<img class="logo" src="https://www.shutterstock.com/image-vector/barbershop-logo-barber-pole-razor-600w-2535695609.jpg" alt="Good Guys Barbería">
 
 <!-- HERO -->
-<header id="inicio">
+<header>
     <div class="content">
-        <h1>GOOD GUYS BARBERÍA</h1>
-        <p>Estilo Premium para Hombres que Buscan lo Mejor</p>
-        <a class="btn" href="AQUI_LINK_GENERAL_FRESHA" target="_blank">RESERVAR AHORA</a>
+        <h1>Barbería Premium</h1>
+        <p>Cortes modernos, barba profesional y atención de primer nivel.</p>
+        <a class="btn" href="AQUI_LINK_GENERAL_FRESHA" target="_blank">
+            Reservar ahora
+        </a>
     </div>
 </header>
 
 <!-- SERVICIOS -->
-<section id="servicios">
+<section>
 <h2>Servicios</h2>
 <div class="services">
-    <div class="card">Corte Premium $300 MXN<br><a class="btn" href="#">Reservar</a></div>
-    <div class="card">Corte + Barba<br><a class="btn" href="#">Reservar</a></div>
-    <div class="card">Afeitado Clásico<br><a class="btn" href="#">Reservar</a></div>
+    <div class="service">
+        <h3>Corte Premium</h3>
+        <p>$300 MXN</p>
+        <a class="btn" href="AQUI_LINK_GENERAL_FRESHA">Reservar</a>
+    </div>
+    <div class="service">
+        <h3>Corte + Barba</h3>
+        <a class="btn" href="AQUI_LINK_GENERAL_FRESHA">Reservar</a>
+    </div>
+    <div class="service">
+        <h3>Afeitado Clásico</h3>
+        <a class="btn" href="AQUI_LINK_GENERAL_FRESHA">Reservar</a>
+    </div>
 </div>
 </section>
 
 <!-- BARBEROS -->
-<section id="barberos">
+<section>
 <h2>Nuestro Equipo</h2>
 <div class="barbers">
     <div class="card">
@@ -198,51 +235,31 @@ iframe{
 </section>
 
 <!-- OPINIONES -->
-<section id="opiniones">
-    <h2>Opiniones de Nuestros Clientes</h2>
-
-    <div class="fresha-badge">
-        ⭐ Reseñas verificadas – Próximamente desde Google y Fresha
-    </div>
-
-    <div class="testimonials">
-        <div class="review">
-            ⭐⭐⭐⭐⭐<br>
-            “Excelente atención y ambiente premium. Volveré sin duda.”
-            <br><strong>– Cliente verificado</strong>
-        </div>
-
-        <div class="review">
-            ⭐⭐⭐⭐⭐<br>
-            “Muy profesionales, el corte quedó perfecto.”
-            <br><strong>– Cliente verificado</strong>
-        </div>
-
-        <div class="review">
-            ⭐⭐⭐⭐⭐<br>
-            “Reservar fue rápido y el servicio de primera.”
-            <br><strong>– Cliente verificado</strong>
-        </div>
-    </div>
+<section>
+<h2>Opiniones</h2>
+<div class="review">⭐⭐⭐⭐⭐ Excelente servicio y ambiente premium.</div>
+<div class="review">⭐⭐⭐⭐⭐ El corte quedó perfecto, muy recomendados.</div>
 </section>
-
 
 <!-- MAPA -->
 <section>
 <h2>Ubicación</h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.804870281357!2d-100.74585982528849!3d20.920168791500547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b5152cc3da6b3%3A0x1e45ad22ba749a0f!2sVillano%20Barber%C3%ADas%20San%20Miguel!5e0!3m2!1ses-419!2smx!4v1766194520211!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.804870281357!2d-100.74585982528849!3d20.920168791500547"></iframe>
 </section>
 
-<!-- CTA -->
+<!-- CTA FINAL -->
 <section style="text-align:center">
-<h2>¿Listo para tu siguiente corte?</h2>
-<a class="btn" href="AQUI_LINK_GENERAL_FRESHA" target="_blank">RESERVAR AHORA</a>
+<h2>Reserva tu cita hoy</h2>
+<a class="btn" href="AQUI_LINK_GENERAL_FRESHA" target="_blank">
+    Reservar en Fresha
+</a>
 </section>
 
 <a class="whatsapp" href="https://wa.me/524151671705" target="_blank">💬</a>
 
 </body>
 </html>
+
 
 
 
