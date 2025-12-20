@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barberos | Good Guys Barbería</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Montserrat,sans-serif;
+    background:#000;
+    color:#fff;
+}
+
+/* ===== MENU ===== */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.95);
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:15px 0;
+    z-index:1000;
+    border-bottom:1px solid #c7a462;
+}
+nav a{
+    color:#c7a462;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{color:#fff}
+
+/* ===== CONTENIDO ===== */
+section{
+    padding:120px 20px 60px;
+    max-width:1100px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:#c7a462;
+    margin-bottom:40px;
+}
+
+/* ===== BARBEROS ===== */
+.barbers{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#111;
+    padding:25px;
+    border:1px solid #c7a462;
+    border-radius:12px;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin:10px 0 5px;
+    color:#c7a462;
+}
+
+.card p{
+    font-size:.95rem;
+    margin-bottom:15px;
+}
+
+/* ===== BOTON ===== */
+.btn{
+    background:#c7a462;
+    color:#000;
+    padding:12px 25px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    color:#fff;
+    text-decoration:none;
+    z-index:2000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="barberos.html">Barberos</a>
+</nav>
+
+<section>
+<h1>Nuestro Equipo</h1>
+
+<div class="barbers">
+
+    <div class="card">
+        <img src="https://img.freepik.com/vector-gratis/ilustracion-joven-sonriente_1308-174669.jpg?semt=ais_hybrid&w=740&q=80" alt="Alex">
+        <h3>Alex – Master Barber</h3>
+        <p>Especialista en cortes modernos, fades y estilos premium.</p>
+        <a class="btn" href="https://fresha.com/p/eduardo-hernandez-5902203" target="_blank">
+            Reservar con Alex
+        </a>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfdRm5YE4F7VyKQeY88_d2WMGzlc_9hOYdoA&s" alt="Chris">
+        <h3>Chris – Barber</h3>
+        <p>Experto en cortes clásicos, precisión y atención al detalle.</p>
+        <a class="btn" href="LINK_FRESHA_CHRIS" target="_blank">
+            Reservar con Chris
+        </a>
+    </div>
+
+    <div class="card">
+        <img src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369991.png" alt="Leo">
+        <h3>Leo – Specialist</h3>
+        <p>Especialista en barba, diseño y acabados premium.</p>
+        <a class="btn" href="LINK_FRESHA_LEO" target="_blank">
+            Reservar con Leo
+        </a>
+    </div>
+
+</div>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/524151671705" class="whatsapp" target="_blank">💬</a>
+
+</body>
+</html>
