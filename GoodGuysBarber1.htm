@@ -1,294 +1,248 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Good Guys Barbería</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Guys Barbería</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: "Montserrat", sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
+<style>
+body{
+    margin:0;
+    font-family:Montserrat,sans-serif;
+    background:#000;
+    color:#fff;
+}
 
-        /* HEADER */
-        header {
-            background: url('https://t3.ftcdn.net/jpg/03/12/39/56/360_F_312395691_JwZk1L4P2dPbuqS32IApNipW95v20NnA.jpg') center/cover no-repeat;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
+/* ===== MENU ===== */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.95);
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:15px 0;
+    z-index:2000;
+    border-bottom:1px solid #c7a462;
+}
+nav a{
+    color:#c7a462;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{color:#fff}
 
-        header::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-        }
+/* ===== HERO ===== */
+header{
+    background:url('https://t3.ftcdn.net/jpg/03/12/39/56/360_F_312395691_JwZk1L4P2dPbuqS32IApNipW95v20NnA.jpg') center/cover no-repeat;
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    margin-top:60px;
+}
+header::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+header .content{
+    position:relative;
+    z-index:2;
+}
 
-        header div {
-            position: relative;
-            z-index: 2;
-            margin-top: 80px; /* BAJA EL TEXTO */
-        }
+/* ===== LOGO ===== */
+.logo{
+    position:absolute;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%);
+    width:150px;
+    z-index:3;
+}
 
-        /* LOGO */
-        .logo {
-            position: absolute;
-            top: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            width: 150px;
-            height: auto;
-            filter: drop-shadow(0px 0px 6px rgba(0,0,0,0.7));
-        }
+/* ===== TEXTOS ===== */
+h1{color:#c7a462;font-size:3rem}
+h2{text-align:center;color:#c7a462;margin-bottom:25px}
 
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            color: #c7a462;
-            margin-bottom: 10px;
-        }
+/* ===== BOTON ===== */
+.btn{
+    background:#c7a462;
+    color:#000;
+    padding:14px 26px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    margin-top:15px;
+}
 
-        .btn {
-            background-color: #c7a462;
-            color: #000;
-            padding: 15px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            display: inline-block;
-            margin-top: 20px;
-        }
+/* ===== SECCIONES ===== */
+section{
+    padding:60px 20px;
+    max-width:1100px;
+    margin:auto;
+}
 
-        section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+.services,.barbers,.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
 
-        h2 {
-            margin-bottom: 25px;
-            text-align: center;
-            color: #c7a462;
-            font-size: 2rem;
-        }
+.card{
+    background:#111;
+    padding:25px;
+    border:1px solid #c7a462;
+    border-radius:10px;
+    text-align:center;
+}
+.card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
 
-        .services, .gallery, .barbers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
+/* ===== OPINIONES ===== */
+.fresha-badge{
+    text-align:center;
+    color:#c7a462;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+.review{
+    background:#111;
+    padding:20px;
+    border-left:4px solid #c7a462;
+    border-radius:8px;
+    margin-bottom:15px;
+}
 
-        .card {
-            background: #111;
-            padding: 25px;
-            border: 1px solid #c7a462;
-            border-radius: 10px;
-            text-align: center;
-        }
+/* ===== MAPA ===== */
+iframe{
+    width:100%;
+    height:350px;
+    border-radius:12px;
+    border:none;
+}
 
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .gallery img {
-            width: 100%;
-            border-radius: 10px;
-            border: 2px solid #c7a462;
-        }
-
-        /* Opiniones */
-        .fresha-badge {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #c7a462;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .testimonials {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .review {
-            background: #111;
-            padding: 20px;
-            border-left: 4px solid #c7a462;
-            border-radius: 8px;
-        }
-
-        iframe {
-            width: 100%;
-            border-radius: 12px;
-            height: 350px;
-            border: none;
-        }
-
-        /* WhatsApp flotante */
-        .whatsapp {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #25D366;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 32px;
-            text-decoration: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.4);
-        }
-    </style>
+/* ===== WHATSAPP ===== */
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    color:#fff;
+    text-decoration:none;
+    z-index:2000;
+}
+</style>
 </head>
 
 <body>
 
-    <!-- LOGO -->
-    <img class="logo" src="https://www.shutterstock.com/image-vector/barbershop-logo-barber-pole-razor-600w-2535695609.jpg" alt="Logo Good Guys Barbería">
+<!-- MENU -->
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#barberos">Barberos</a>
+</nav>
 
-    <!-- HERO -->
-    <header>
-        <div>
-            <h1>GOOD GUYS BARBERÍA</h1>
-            <p>Estilo Premium para Hombres que Buscan lo Mejor</p>
-            <a class="btn" href="AQUI_LINK_GENERAL_FRESHA" target="_blank">RESERVAR AHORA</a>
-        </div>
-    </header>
+<img class="logo" src="https://www.shutterstock.com/image-vector/barbershop-logo-barber-pole-razor-600w-2535695609.jpg">
 
-    <!-- SERVICIOS -->
-    <section>
-        <h2>Servicios</h2>
-        <div class="services">
-
-            <div class="card">
-                Corte Premium $300 MXN
-                <a class="btn" href="https://www.fresha.com/es/a/villano-san-miguel-san-miguel-de-allende-san-miguel-de-allende-calzada-de-la-aurora-11-by0snze0/booking?offerItems=sv%3A20611592&pId=1461756&cartId=b5f4c951-5774-41ec-9007-a31fb5632b25" target="_blank">Reservar</a>
-            </div>
-
-            <div class="card">
-                Corte + Barba $200 MXN
-                <a class="btn" href="LINK_FRESHA_CORTE_BARBA" target="_blank">Reservar</a>
-            </div>
-
-            <div class="card">
-                Afeitado Clásico $300 MXN
-                <a class="btn" href="LINK_FRESHA_AFEITADO" target="_blank">Reservar</a>
-            </div>
-
-            <div class="card">
-                Fade / Estilos Modernos
-                <a class="btn" href="LINK_FRESHA_FADE" target="_blank">Reservar</a>
-            </div>
-
-            <div class="card">
-                Arreglo de Barba
-                <a class="btn" href="LINK_FRESHA_BARBA" target="_blank">Reservar</a>
-            </div>
-
-            <div class="card">
-                Facial Express
-                <a class="btn" href="LINK_FRESHA_FACIAL" target="_blank">Reservar</a>
-            </div>
-
-            <div class="card">
-                Paquete del Rey
-                <a class="btn" href="LINK_FRESHA_REY" target="_blank">Reservar</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- BARBEROS -->
-    <section>
-        <h2>Nuestro Equipo</h2>
-        <div class="barbers">
-
-            <div class="card">
-                <img src="https://img.freepik.com/vector-gratis/ilustracion-joven-sonriente_1308-174669.jpg?semt=ais_hybrid&w=740&q=80" alt="Barbero Alex">
-                <h3>Alex – Master Barber</h3>
-                <p>Especialista en cortes modernos y fades.</p>
-                <a class="btn" href="https://fresha.com/p/eduardo-hernandez-5902203" target="_blank">Reservar con Alex</a>
-            </div>
-
-            <div class="card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfdRm5YE4F7VyKQeY88_d2WMGzlc_9hOYdoA&s" alt="Barbero Chris">
-                <h3>Chris – Barber</h3>
-                <p>Experto en cortes clásicos y precisión.</p>
-                <a class="btn" href="LINK_FRESHA_CHRIS" target="_blank">Reservar con Chris</a>
-            </div>
-
-            <div class="card">
-                <img src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369991.png" alt="Barbero Leo">
-                <h3>Leo – Specialist</h3>
-                <p>Experto en barba, diseño y detalles premium.</p>
-                <a class="btn" href="LINK_FRESHA_LEO" target="_blank">Reservar con Leo</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- GALERÍA -->
-    <section>
-        <h2>Galería</h2>
-        <div class="gallery">
-            <img src="https://www.jesusdos.com/el-mundo-de-la-barberia-tradicion-e-innovacion-en-jesus-dos_img184857t1.jpg">
-            <img src="https://barberiacapital.mx/cdn/shop/articles/Barberia_2018_Monterrey_003.jpg?v=1672800428&width=2048">
-            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80">
-            <img src="https://academiascissors.com.ar/wp-content/uploads/2021/01/shome_perfecc._corte_masculino_con_visagismo_barberia.jpg">
-        </div>
-    </section>
-
-    <!-- OPINIONES -->
-    <section>
-        <h2>Opiniones de Nuestros Clientes</h2>
-
-        <div class="fresha-badge">
-            ⭐ Opiniones verificadas desde Fresha
-        </div>
-
-        <div class="testimonials">
-            <div class="review">⭐⭐⭐⭐⭐ “Excelente servicio, muy profesionales y ambiente de lujo.” – Luis M.</div>
-            <div class="review">⭐⭐⭐⭐⭐ “El fade me quedó perfecto, totalmente recomendado.” – Rafael C.</div>
-            <div class="review">⭐⭐⭐⭐⭐ “Mi nueva barbería favorita. Reservar en Fresha fue rapidísimo.” – Jorge H.</div>
-        </div>
-    </section>
-
-    <!-- MAPA -->
-    <section>
-        <h2>Ubicación</h2>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.459260325082!2d-99.1676621!3d19.4326072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzU3LjQiTiA5OcKwMTAnMDQuMCJX!5e0!3m2!1ses!2smx!4v0000000000"
-            allowfullscreen="">
-        </iframe>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section style="text-align: center;">
-        <h2>¿Listo para tu siguiente corte?</h2>
+<!-- HERO -->
+<header id="inicio">
+    <div class="content">
+        <h1>GOOD GUYS BARBERÍA</h1>
+        <p>Estilo Premium para Hombres que Buscan lo Mejor</p>
         <a class="btn" href="AQUI_LINK_GENERAL_FRESHA" target="_blank">RESERVAR AHORA</a>
-    </section>
+    </div>
+</header>
 
-    <!-- WHATSAPP -->
-    <a href="https://wa.me/524151671705" class="whatsapp" target="_blank">💬</a>
+<!-- SERVICIOS -->
+<section id="servicios">
+<h2>Servicios</h2>
+<div class="services">
+    <div class="card">Corte Premium $300 MXN<br><a class="btn" href="#">Reservar</a></div>
+    <div class="card">Corte + Barba<br><a class="btn" href="#">Reservar</a></div>
+    <div class="card">Afeitado Clásico<br><a class="btn" href="#">Reservar</a></div>
+</div>
+</section>
+
+<!-- BARBEROS -->
+<section id="barberos">
+<h2>Nuestro Equipo</h2>
+<div class="barbers">
+    <div class="card">
+        <img src="https://img.freepik.com/vector-gratis/ilustracion-joven-sonriente_1308-174669.jpg">
+        <h3>Alex – Master Barber</h3>
+        <a class="btn" href="#">Reservar con Alex</a>
+    </div>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfdRm5YE4F7VyKQeY88_d2WMGzlc_9hOYdoA&s">
+        <h3>Chris – Barber</h3>
+        <a class="btn" href="#">Reservar con Chris</a>
+    </div>
+</div>
+</section>
+
+<!-- OPINIONES -->
+<section id="opiniones">
+    <h2>Opiniones de Nuestros Clientes</h2>
+
+    <div class="fresha-badge">
+        ⭐ Reseñas verificadas – Próximamente desde Google y Fresha
+    </div>
+
+    <div class="testimonials">
+        <div class="review">
+            ⭐⭐⭐⭐⭐<br>
+            “Excelente atención y ambiente premium. Volveré sin duda.”
+            <br><strong>– Cliente verificado</strong>
+        </div>
+
+        <div class="review">
+            ⭐⭐⭐⭐⭐<br>
+            “Muy profesionales, el corte quedó perfecto.”
+            <br><strong>– Cliente verificado</strong>
+        </div>
+
+        <div class="review">
+            ⭐⭐⭐⭐⭐<br>
+            “Reservar fue rápido y el servicio de primera.”
+            <br><strong>– Cliente verificado</strong>
+        </div>
+    </div>
+</section>
+
+
+<!-- MAPA -->
+<section>
+<h2>Ubicación</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.459260325082!2d-99.1676621!3d19.4326072"></iframe>
+</section>
+
+<!-- CTA -->
+<section style="text-align:center">
+<h2>¿Listo para tu siguiente corte?</h2>
+<a class="btn" href="AQUI_LINK_GENERAL_FRESHA" target="_blank">RESERVAR AHORA</a>
+</section>
+
+<a class="whatsapp" href="https://wa.me/524151671705" target="_blank">💬</a>
 
 </body>
 </html>
+
 
 
